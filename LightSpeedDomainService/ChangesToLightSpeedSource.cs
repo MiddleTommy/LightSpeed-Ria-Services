@@ -6,6 +6,9 @@ using Mindscape.LightSpeed;
 
 namespace LightSpeedDomainService.Changes
 {
+
+    //make these changes inside shown classes
+
     public class Entity<TId> 
     {
         private TId _id;
@@ -44,6 +47,8 @@ namespace LightSpeedDomainService.Changes
     public abstract class Entity
     {
         //Add the LazyLoading Check in the Entity
+
+        //change single line
         private void GetInternal(IEntityHolder entityHolder, Type entityType)
         {
             if (/*MindscapeCide*/true)
@@ -57,6 +62,7 @@ namespace LightSpeedDomainService.Changes
             }
         }
 
+        //cahnge single line
         private void LoadCollection(IEntityCollection entityCollection, Entity parent)
         {
             if (/*Mindscape Code*/true)
@@ -71,6 +77,16 @@ namespace LightSpeedDomainService.Changes
             {
                 //mindscape code
             }
+        }
+
+        /// <summary>
+        /// Sets the Entity State
+        /// Added this method to change the Entity State of Update and Delete Items from New to Default or Modified
+        /// </summary>
+        /// <param name="state"></param>
+        public void SetEntityState(EntityState state)
+        {
+            EntityState = state;
         }
     }
 }
