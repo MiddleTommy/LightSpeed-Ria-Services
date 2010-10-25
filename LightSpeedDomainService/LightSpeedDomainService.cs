@@ -156,6 +156,13 @@ namespace Mindscape.LightSpeed.Ria
         /// <returns>The DomainContext</returns>
         protected abstract LightSpeedContext<TUnitOfWork> CreateDataContext();
 
+       /// <summary>
+       /// Get Context is a helper method that returns a Context with the Default Ria Services settings.
+       /// Modify this method to save you repetative settings of LightSpeedContext creation.
+       /// </summary>
+       /// <param name="connection"></param>
+       /// <param name="provider"></param>
+       /// <returns></returns>
         public static LightSpeedContext<TUnitOfWork> GetContext(string connection, DataProvider provider)
         {
             var nctx = new LightSpeedContext<TUnitOfWork>();
